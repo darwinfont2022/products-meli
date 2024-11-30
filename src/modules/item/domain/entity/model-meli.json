@@ -1,0 +1,188 @@
+{
+    "id": "MLB1828680414",
+    "site_id": "MLB",
+    "title": "Controle Xbox Series S Lacrado",
+    "seller_id": 35204426,
+    "category_id": "MLB268333",
+    "official_store_id": null,
+    "price": 599.9,
+    "base_price": 599.9,
+    "original_price": null,
+    "currency_id": "BRL",
+    "initial_quantity": 130,
+    "available_quantity": 7,
+   --- Somente disponível com token proprietário
+   "sold_quantity": 123,
+   --- Somente disponível com token proprietário
+   "sale_terms": [
+        {
+            "id": "WARRANTY_TYPE",
+            "name": "Tipo de garantia",
+            "value_id": "6150835",
+            "value_name": "Sem garantia",
+        }
+    ],
+    "buying_mode": "buy_it_now",
+    "listing_type_id": "gold_pro",
+    "start_time": "2021-03-19T19:23:37.000Z",
+   --- Somente disponível com token proprietário
+   "historical_start_time": "2021-03-19T19:23:37.000Z",
+   --- Somente disponível com token proprietário
+   "stop_time": "2042-05-04T12:02:52.000Z",
+   --- Somente disponível com token proprietário
+   "condition": "new",
+    "permalink": "https://produto.mercadolivre.com.br/MLB-1828680414-controle-xbox-series-s-lacrado-_JM",
+    "thumbnail_id": "938331-MLA45268824993_032021",
+    "thumbnail": "http://http2.mlstatic.com/D_938331-MLA45268824993_032021-I.jpg",
+    "pictures": [
+        {
+            "id": "938331-MLA45268824993_032021",
+            "url": "http://http2.mlstatic.com/D_938331-MLA45268824993_032021-O.jpg",
+            "secure_url": "https://http2.mlstatic.com/D_938331-MLA45268824993_032021-O.jpg",
+            "size": "500x341",
+            "max_size": "1200x820",
+            "quality": ""
+        },
+        {
+            "id": "643476-MLA45268824996_032021",
+            "url": "http://http2.mlstatic.com/D_643476-MLA45268824996_032021-O.jpg",
+            "secure_url": "https://http2.mlstatic.com/D_643476-MLA45268824996_032021-O.jpg",
+            "size": "500x476",
+            "max_size": "1098x1046",
+            "quality": ""
+        },
+        {
+            "id": "606024-MLA45268828929_032021",
+            "url": "http://http2.mlstatic.com/D_606024-MLA45268828929_032021-O.jpg",
+            "secure_url": "https://http2.mlstatic.com/D_606024-MLA45268828929_032021-O.jpg",
+            "size": "500x249",
+            "max_size": "1031x514",
+            "quality": ""
+        }
+    ],
+    "video_id": null,
+    "descriptions": [
+        {
+            "id": "MLB1828680414-3327853490"
+        }
+    ],
+    "accepts_mercadopago": true,
+    "non_mercado_pago_payment_methods": [],
+    "shipping": {
+        "mode": "me2",
+        "free_methods": [
+            {
+                "id": 100009,
+                "rule": {
+                    "default": true,
+                    "free_mode": "country",
+                    "free_shipping_flag": true,
+                    "value": null
+                }
+            }
+        ],
+        "tags": [
+            "self_service_in",
+            "mandatory_free_shipping"
+        ],
+        "dimensions": null,
+        "local_pick_up": false,
+        "free_shipping": true,
+        "logistic_type": "fulfillment",
+        "store_pick_up": false
+    },
+    "international_delivery_mode": "none",
+    "seller_address": {
+        "city": {
+            "id": "BR-SP-41",
+            "name": "Guarulhos"
+        },
+        "state": {
+            "id": "BR-SP",
+            "name": "São Paulo"
+        },
+        "country": {
+            "id": "BR",
+            "name": "Brasil"
+        },
+        "search_location": {
+            "neighborhood": {
+                "id": "TUxCQlZJTDI1Mjc",
+                "name": "Vila Galvão"
+            },
+            "city": {
+                "id": "TUxCQ1NQLTcyOTU",
+                "name": "Guarulhos"
+            },
+            "state": {
+                "id": "TUxCUFNBT085N2E4",
+                "name": "São Paulo"
+            }
+        },
+        "id": 78064807
+    },
+    "seller_contact": null,
+    "location": {},
+    "coverage_areas": [],
+    "attributes": [
+        {
+            "id": "WITH_BLUETOOTH",
+            "name": "Com Bluetooth",
+            "value_id": "242085",
+            "value_name": "Sim"
+        }
+    ],
+    "listing_source": "",
+    "variations": [
+        {
+            "id": 79253320985,
+            "price": 599.90,
+            "attribute_combinations": [
+                {
+                    "id": "COLOR",
+                    "name": "Cor",
+                    "value_id": "9251317",
+                    "value_name": "Robot white",
+                    "value_type": "string"
+                }
+            ],
+            "available_quantity": 7,
+            "sold_quantity": 123,--- Somente disponível com token proprietário
+            "sale_terms": [],
+            "picture_ids": [
+                "938331-MLA45268824993_032021",
+                "643476-MLA45268824996_032021",
+                "606024-MLA45268828929_032021"
+            ],
+            "catalog_product_id": "MLB16268161"
+        }
+    ],
+    "status": "active",
+    "sub_status": [],
+    "tags": [
+        "good_quality_picture",
+        "good_quality_thumbnail",
+        "standard_price_by_channel",
+        "immediate_payment",
+        "cart_eligible"
+    ],
+    "warranty": "Sem garantia",
+    "catalog_product_id": "MLB16268158",
+    "domain_id": "MLB-GAMEPADS_AND_JOYSTICKS",
+    "parent_item_id": null,
+    "deal_ids": [
+        "MLB8962",
+        "MLB7438"
+    ],
+    "automatic_relist": false,
+    "date_created": "2021-03-19T19:23:37.000Z",
+    "last_updated": "2022-06-01T22:31:01.798Z",
+    "total_listing_fee": null,
+    "health": 1,
+    "catalog_listing": false,
+    "channels": [
+        "marketplace", --- Somente disponível com token proprietário
+        "mshops" --- Somente disponível com token proprietário
+    ],
+    "bundle": null
+}
