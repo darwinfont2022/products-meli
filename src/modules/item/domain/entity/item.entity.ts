@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, JoinTable, OneToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { SellerAddressEntity } from "./seller-address.entity";
 import { AttributeEntity } from "./attribute.entity";
 import { VariationEntity } from "./variation.entity";
@@ -12,6 +12,10 @@ import { WarrantyEnum } from "./enums-type/warranty.enum";
 import { ConditionEnum } from "./enums-type/condition.enum";
 import { TimeEntity } from "./time.entity";
 import { PriceEntity } from "./price.entity";
+import { InternationalDeliveryEnum } from "./enums-type/international-delivery.enum";
+import { EItemTag } from "./enums-type/item-tags.enum";
+import { ESubStatus } from "./enums-type/sub-status.enum";
+import { EChanel } from "./enums-type/chanel.enum";
 
 @Entity({
     name: "item"
@@ -26,30 +30,29 @@ export class ItemEntity {
     @Column()
     seller_id: string;
     @Column()
-    category_id: string;
+    category_id?: string;
     @Column()
-    official_store_id: number;
+    official_store_id?: number;
     @Column()
-    permalink: string;
+    permalink?: string;
     @Column()
-    video_id: string;
+    video_id?: string;
+
     @Column()
-    international_delivery_mode: string;
+    domain_id?: string;
     @Column()
-    location: string;
-    @Column()
-    domain_id: string;
-    @Column()
-    parent_item_id: string
+    parent_item_id?: string
     @CreateDateColumn()
-    date_created: Date;
+    date_created?: Date;
     @UpdateDateColumn()
-    last_updated: Date;
-    @Column()
-    health: number;
-    @Column()
-    bundle: string;
+    last_updated?: Date;
     // ENUM's
+    @Column({
+        type: "enum",
+        enum: InternationalDeliveryEnum,
+        default: InternationalDeliveryEnum.NONE
+    })
+    international_delivery_mode?: InternationalDeliveryEnum;
     @Column(
         {
             type: "enum",
@@ -57,65 +60,86 @@ export class ItemEntity {
             default: BuyingMode.BUYIT_NOW
         }
     )
-    buying_mode: BuyingMode;
+    buying_mode?: BuyingMode;
     @Column({
         type: "enum",
         enum: StatusEnum,
         default: StatusEnum.ACTIVE
     })
-    status: StatusEnum;
+    status?: StatusEnum;
     @Column({
         type: "enum",
         enum: WarrantyEnum,
         default: WarrantyEnum.MAX
     })
-    warranty: WarrantyEnum;
+    warranty?: WarrantyEnum;
     @Column({
         type: "enum",
         enum: ConditionEnum,
         default: ConditionEnum.NOT_SPECIFIED
     })
-    condition: ConditionEnum; // enum
+    condition?: ConditionEnum;
 
     // ARRAY's
-    @Column("simple-array")
-    coverage_areas: string[];
-    @Column("simple-array")
-    tags: string[];
-    @Column("simple-array")
-    sub_status: string[];
-    @Column("simple-array")
-    channels: string[];//Somente disponível com token proprietário
-    @Column("simple-array")
-    deal_ids: string[];
+    @Column({
+        type: "enum",
+        enum: EItemTag,
+        array: true
+    })
+    tags?: EItemTag[];
+    @Column({
+        type: "enum",
+        enum: ESubStatus,
+        array: true
+    })
+    sub_status?: ESubStatus[];
+    @Column({
+        type: "enum",
+        enum: EChanel,
+        array: true
+    })
+    channels?: EChanel[];//Somente disponível com token proprietário
 
-    // One to One
-    // seller_contact: string;
-    @OneToOne(() => TimeEntity)
-    @JoinColumn()
-    time: TimeEntity;
-    @OneToOne(() => PriceEntity)
+    @OneToOne((type) => PriceEntity, {
+        cascade: true
+    })
     @JoinColumn()
     price: PriceEntity;
-    @OneToOne(() => StockEntity)
+    @OneToOne((type) => StockEntity, {
+        cascade: true
+    })
     @JoinColumn()
-    quantiy: StockEntity;
-    @OneToOne(() => ThumbnailEntity)
+    stock?: StockEntity;
+    @OneToOne((type) => ThumbnailEntity, {
+        cascade: true
+    })
     @JoinColumn()
-    thumbnail: ThumbnailEntity;
-    @OneToOne(() => PaymentMethodEntity)
+    thumbnail?: ThumbnailEntity;
+    @OneToOne((type) => PaymentMethodEntity, {
+        cascade: true
+    })
     @JoinColumn()
     payment_method: PaymentMethodEntity;
-    @OneToOne(() => SellerAddressEntity)
+    @OneToOne((type) => SellerAddressEntity, {
+        cascade: true
+    })
     @JoinColumn()
-    seller_address: SellerAddressEntity;
-    @OneToOne(() => CatalogEntity)
+    seller_address?: SellerAddressEntity;
+    @OneToOne((type) => CatalogEntity, {
+        cascade: true
+    })
     @JoinColumn()
-    catalog: CatalogEntity;
+    catalog?: CatalogEntity;
 
     // Ono to Many
-    @OneToMany(() => AttributeEntity, (attribute) => attribute.item)
-    attributes: AttributeEntity[];
-    @OneToMany(() => VariationEntity, (variation) => variation.item)
-    variations: VariationEntity[];
+    @OneToMany((type) => AttributeEntity, (attribute) => attribute.item, {
+        cascade: true
+    })
+    @JoinTable()
+    attributes?: AttributeEntity[];
+    @OneToMany(() => VariationEntity, (variation) => variation.item, {
+        cascade: true
+    })
+    @JoinTable()
+    variations?: VariationEntity[];
 }

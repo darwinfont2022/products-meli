@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { getConfigToken } from '@nestjs/config'
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { IConfiguration } from './config';
 import { ItemEntity } from 'src/modules/item/domain/entity/item.entity';
@@ -27,7 +26,6 @@ import { VariationEntity } from 'src/modules/item/domain/entity/variation.entity
 export class ConfigurationService {
     public static getDataSource(): TypeOrmModuleOptions {
         const database = this.getConfiguration().database;
-        // __dirname + '../modules/product/domain/entity/*.entity.ts'
         return {
             type: 'postgres',
             host: database.host,
@@ -36,6 +34,8 @@ export class ConfigurationService {
             password: database.password,
             database: database.name,
             entities: [
+                // __dirname + '../modules/item/domain/entity/*.entity.ts'
+
                 ItemEntity,
                 AddresItemEntity,
                 AttributeEntity,

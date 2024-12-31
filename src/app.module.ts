@@ -1,5 +1,5 @@
 import { ConfigurationService } from './config/configuratio.service';
-import { ProductModule } from './modules/item/product.module';
+import { ItemModule } from './modules/item/item.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -9,7 +9,7 @@ import { ConfigModule } from '@nestjs/config';
 import { configuration } from "./config/configuratio.service"
 @Module({
   imports: [
-    ProductModule,
+    ItemModule,
     ConfigModule.forRoot({
       load: [configuration]
     }),
@@ -18,7 +18,8 @@ import { configuration } from "./config/configuratio.service"
   controllers: [AppController],
   providers: [
     ConfigurationService,
-    AppService],
+    AppService
+  ],
 })
 export class AppModule {
   constructor(private dataSource: DataSource) {

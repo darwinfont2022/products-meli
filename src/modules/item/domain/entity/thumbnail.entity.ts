@@ -7,7 +7,5 @@ export class ThumbnailEntity {
     @PrimaryGeneratedColumn()
     id: number;
     @Column()
-    thumbnail_id: string;
-    @Column()
-    thumbnail: string;
+    thumbnail?: string;
 }

@@ -9,8 +9,6 @@ export class VariationEntity {
     @PrimaryGeneratedColumn()
     id: number;
     @Column()
-    mlb_id: string;
-    @Column()
     price: number;
     @Column()
     available_quantity: number;
@@ -18,12 +16,16 @@ export class VariationEntity {
     sold_quantity: number;
     @Column()
     sale_terms: string;
-    @Column()
-    picture_ids: string;
+    @Column("simple-array")
+    picture_ids?: string[];
     @Column()
     catalog_product_id: string;
-    @ManyToOne(() => ItemEntity, (item) => item.attributes)
+    @ManyToOne(() => ItemEntity, (item) => item.attributes, {
+        onDelete: 'CASCADE'
+    })
     item: ItemEntity
-    @OneToMany(() => CombinationEntity, (attr) => attr.variation)
-    attribute_combinations: CombinationEntity[];
+    @OneToMany(() => CombinationEntity, (attr) => attr.variation, {
+        onDelete: 'CASCADE'
+    })
+    attribute_combinations?: CombinationEntity[];
 }

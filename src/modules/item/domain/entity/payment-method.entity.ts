@@ -1,4 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { EPaymentMethod } from "./enums-type/payment-method.enum";
 
 @Entity({
     name: "payment_method"
@@ -8,6 +9,10 @@ export class PaymentMethodEntity {
     id: number;
     @Column()
     accepts_mercadopago: boolean;
-    @Column()
-    non_mercado_pago_payment_methods: string; // Could be enum?
+    @Column({
+        type: "enum",
+        enum: EPaymentMethod,
+        default: EPaymentMethod.OTHER
+    })
+    non_mercado_pago_payment_methods: EPaymentMethod;
 }

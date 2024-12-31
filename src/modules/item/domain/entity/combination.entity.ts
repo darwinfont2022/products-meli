@@ -8,8 +8,6 @@ export class CombinationEntity {
     @PrimaryGeneratedColumn()
     id: number;
     @Column()
-    mlb_id: string;
-    @Column()
     name: string;
     @Column()
     value_id: string;
