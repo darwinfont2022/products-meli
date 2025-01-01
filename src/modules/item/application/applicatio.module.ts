@@ -8,6 +8,8 @@ import { ItemUpdateUseCase } from "./use-case/item/item-update.use-case";
 import { PriceLoadUseCase } from "./use-case/price/price-load.use-case";
 import { PriceUpdateUseCase } from "./use-case/price/price-update.use-case";
 import { PriceDeleteUseCase } from "./use-case/price/price-delete.use-case";
+import { StockLoadUseCase } from "./use-case/stock/stock-load.use-case";
+import { StockUpdateUseCase } from "./use-case/stock/stock-update.use-case";
 
 @Module(
     {
@@ -15,10 +17,12 @@ import { PriceDeleteUseCase } from "./use-case/price/price-delete.use-case";
         providers: [
             ItemLoadUseCase, ItemCreateUseCase, ItemUpdateUseCase,
             PriceCreateUseCase, PriceLoadUseCase, PriceUpdateUseCase, PriceDeleteUseCase,
-            StockUseCase
+            StockUseCase, StockLoadUseCase, StockUpdateUseCase
         ],
-        exports: [ItemLoadUseCase, ItemCreateUseCase, ItemUpdateUseCase,
-            PriceCreateUseCase, PriceLoadUseCase, PriceUpdateUseCase, PriceDeleteUseCase
+        exports: [
+            ItemLoadUseCase, ItemCreateUseCase, ItemUpdateUseCase,
+            PriceCreateUseCase, PriceLoadUseCase, PriceUpdateUseCase, PriceDeleteUseCase,
+            StockUseCase, StockLoadUseCase, StockUpdateUseCase,
         ]
     }
 )

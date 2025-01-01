@@ -8,6 +8,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ApplicationModule } from './application/applicatio.module';
 import { DomainModule } from './domain/domain.module';
 import { PriceController } from './presentation/controller/price.controller';
+import { StockController } from './presentation/controller/stock.controller';
 
 @Module({
     imports: [
@@ -15,7 +16,7 @@ import { PriceController } from './presentation/controller/price.controller';
         ApplicationModule,
         // DomainModule
     ],
-    controllers: [ItemController, PriceController],
+    controllers: [ItemController, PriceController, StockController],
     providers: [
         AttributeRepository,
         CombinationRepository,

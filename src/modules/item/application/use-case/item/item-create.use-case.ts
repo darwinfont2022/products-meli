@@ -34,8 +34,8 @@ export class ItemCreateUseCase {
             dto.currency_id
         );
 
-        entity.stock = StockMapper.toEntity(
-            dto.initial_quantity, dto.available_quantity, 0
+        entity.stock = StockMapper.initEntity(
+            dto.initial_quantity
         )
 
         entity.payment_method = PaymentMethodMapper.toEntity(dto.accepts_mercadopago, dto.non_mercado_pago_payment_methods);
